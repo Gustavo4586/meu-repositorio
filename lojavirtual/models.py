@@ -10,7 +10,6 @@ class Usuario(models.Model):
 class camisa(models.Model):
     tamanho = models.CharField(max_length=3)
     cor = models.CharField(max_length=20)
-    imagem = models.ImageField(upload_to='lojavirtual/static',blank=True)
     preco = models.FloatField()
     tipo = models.CharField(max_length=50)
 
