@@ -1,29 +1,30 @@
-from unittest.util import _MAX_LENGTH
+
 from django.db import models
 
 class Usuario(models.Model):
-    nome = models.CharField(_MAX_LENGTH=100)
+    nome = models.CharField(max_length=100)
     idade = models.IntegerField()
     email = models.EmailField()
     data_nascimento = models.DateField()
 
 class camisa(models.Model):
-    tamanho = models.CharField(_MAX_LENGTH=3)
-    cor = models.CharField(_MAX_LENGTH=20)
+    tamanho = models.CharField(max_length=3)
+    cor = models.CharField(max_length=20)
+    imagem = models.ImageField(upload_to='lojavirtual/static',blank=True)
     preco = models.FloatField()
-    tipo = models.CharField(_MAX_LENGTH=50)
+    tipo = models.CharField(max_length=50)
 
 class sapato(models.Model):
     tamanho = models.IntegerField()
-    cor = models.CharField(_MAX_LENGTH=20)
-    marca = models.CharField(_MAX_LENGTH=50)
+    cor = models.CharField(max_length=20)
+    marca = models.CharField(max_length=50)
     preco = models.FloatField()
-    tipo = models.CharField()
+    tipo = models.CharField(max_length=3)
 
 class short(models.Model):
-    tamanho = models.CharField(_MAX_LENGTH=3)
-    cor = models.CharField(_MAX_LENGTH=20)
-    marca = models.CharField(_MAX_LENGTH=50)
+    tamanho = models.CharField(max_length=3)
+    cor = models.CharField(max_length=20)
+    marca = models.CharField(max_length=50)
     preco = models.FloatField()
 
 
